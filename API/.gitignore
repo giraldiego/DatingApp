@@ -4,8 +4,9 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # My files
-**/route.rest
-**/datingapp.db
+route.rest
+datingapp.db
+appsettings.json
 
 # User-specific files
 *.rsuser
@@ -456,3 +457,4 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+API/appsettings.json
