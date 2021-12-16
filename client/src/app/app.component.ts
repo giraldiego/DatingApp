@@ -13,30 +13,14 @@ export class AppComponent implements OnInit{
   users: any;
   columns: any;
 
-  constructor(
-    private http: HttpClient,
-    private accountService: AccountService) {}
+  constructor(private accountService: AccountService) {}
 
   ngOnInit() {
-    this.getUsers();
     this.setCurrentUser();
   }
 
   setCurrentUser() {
     const user: User = JSON.parse(localStorage.getItem('user'));
     this.accountService.setCurrentUser(user);
-  }
-
-  getUsers() {
-    this.http.get('https://localhost:5001/api/users')
-      .subscribe({
-        next: data => {
-          this.users = data;
-          this.columns = Object.keys(data[0]);
-        },
-        error: err => {
-          console.log(err.error);
-        }
-      })
   }
 }
