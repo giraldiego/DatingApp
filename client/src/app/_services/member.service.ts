@@ -6,14 +6,14 @@ import { Member } from '../_models/member';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user')).token
+    Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
   })
 };
 
 @Injectable({
   providedIn: 'root'
 })
-export class MembersService {
+export class MemberService {
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
